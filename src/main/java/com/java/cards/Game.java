@@ -8,5 +8,6 @@ public class Game {
         deckcard.initGame();
         play.addPlayer();
         play.playerSequence();
+        deckcard.toshuffle();
     }
 }

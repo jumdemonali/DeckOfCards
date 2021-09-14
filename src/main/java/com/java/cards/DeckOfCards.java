@@ -1,10 +1,11 @@
 package com.java.cards;
-
+import java.util.ArrayList;
 public class DeckOfCards {
     public static String[] suit = {"Clubs", "Diamond", "Spades", "Hearts"};
     public static String[] rank = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
     public static String[][] deck = new String[suit.length][rank.length];
-
+    ArrayList<String> cardsDeck = new  ArrayList<>();
+    //public ArrayList<String> cardsDeck = new ArrayList<String>();
     public void initGame() {
         int cardCount = 0;
         for (int i = 0; i < suit.length; i++) {
@@ -17,6 +18,21 @@ public class DeckOfCards {
         }
         System.out.println("Total number of cards are:" + cardCount);
 
+    }
+    public void toshuffle() {
+        ArrayList<String> temp = new ArrayList<String>();
+        while (!cardsDeck.isEmpty()) {
+            int loc = (int) (Math.random() * cardsDeck.size());
+            temp.add(cardsDeck.get(loc));
+            cardsDeck.remove(loc);
+        }
+        cardsDeck = temp;
+        print(cardsDeck);
+    }
+    private void print(ArrayList<String> deck) {
+        for (String card : deck) {
+            System.out.print("Cards are" + card);
+        }
     }
 
 }
