@@ -2,11 +2,11 @@ package com.java.cards;
 
 public class Game {
     public static void main(String[] args) {
+        System.out.println("Welcome to deck of cards program!!");
         DeckOfCards deckcard = new DeckOfCards();
         Player play = new Player();
-        System.out.println("Welcome to deck of cards program!!");
         deckcard.initGame();
         play.addPlayer();
-        deckcard.distributeCard();
+        play.playerSequence();
     }
 }
